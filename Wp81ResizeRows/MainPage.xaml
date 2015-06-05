@@ -7,6 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Page.Resources>
+		<Storyboard x:Name="AnimateRed">
+			<DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="_redBorder">
+                <EasingDoubleKeyFrame KeyTime="0" x:Name="redAnimationFromKeyFrame" Value="300"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" x:Name="redAnimationToKeyFrame" Value="200">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Page.Resources>
 
     <Grid>
         <Grid.RowDefinitions>

@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -47,12 +48,16 @@ namespace Wp81ResizeRows
 
         private void RedSmallButton_OnClick(object sender, RoutedEventArgs e)
         {
-            _redBorder.Height = 100;
+            redAnimationFromKeyFrame.Value = 300;
+            redAnimationToKeyFrame.Value = 200;
+            AnimateRed.Begin();
         }
 
         private void RedLargeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            _redBorder.Height = 300;
+            redAnimationFromKeyFrame.Value = 200;
+            redAnimationToKeyFrame.Value = 300;
+            AnimateRed.Begin();
         }
     }
 }
