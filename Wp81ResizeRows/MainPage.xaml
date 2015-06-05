@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="Wp81ResizeRows.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Wp81ResizeRows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border 
+            x:Name="_redBorder" 
+            Height="300"
+            Grid.Row="0"
+            Background="Red">
+        </Border>
+        <Border 
+            x:Name="_greenBorder" 
+            Height="200"
+            Grid.Row="1"
+            Background="Green">
+        </Border>
+
+        <StackPanel 
+            Grid.Row="2"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button 
+                x:Name="redSmallButton"
+                Content="red small"
+                Click="RedSmallButton_OnClick"/>
+            <Button 
+                x:Name="redLargeButton"
+                Content="red large"
+                Click="RedLargeButton_OnClick"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
